@@ -17,4 +17,33 @@
 * pandas ：数据分析和处理库，主要用于导入和处理数据。[https://pandas.pydata.org/](https://pandas.pydata.org/)
 * tqdm ：python自带进度条工具包。
 
-### 2. 创建图，NetworkX内置图
+（3）测试环境
+
+代码：Code_图机器学习基本使用\A1_配置环境.py
+
+### 2. NetworkX基本使用方法
+
+NetworkX基本使用方法
+
+参考文献：[https://networkx.org/documentation/stable/auto_examples/index.html](https://networkx.org/documentation/stable/auto_examples/index.html)
+
+#### （1）创建图，NetworkX内置图
+
+NetworkX内置了一些预制好的图结构和图数据
+
+参考文献：
+
+* [https://networkx.org/documentation/latest/reference/generators.html](https://networkx.org/documentation/latest/reference/generators.html)
+* [https://networkx.org/documentation/latest/auto_examples/graph/index.html](https://networkx.org/documentation/latest/auto_examples/graph/index.html)
+
+代码：Code_图机器学习基本使用\A2_创建图NetworkX内置图.py
+
+#### （2）创建图，使用连接表和邻接表创建图
+
+使用NetworkX，通过连接表和邻接表创建图，通过邻接矩阵创建图
+
+参考文献：
+
+* [https://networkx.org/documentation/latest/reference/convert.html](https://networkx.org/documentation/latest/reference/convert.html)
+
+代码：Code_图机器学习基本使用\A3_创建图_连接表和邻接表创建图.py

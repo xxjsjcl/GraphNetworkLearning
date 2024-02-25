@@ -8,3 +8,8 @@ import matplotlib.pyplot as plt
 plt.rcParams['font.sans-serif']=['SimHei'] # 用来显示中文标签
 plt.rcParams['axes.unicode_minus']=False  # 用来正常显示正负号
 
+# 使用连接表、邻接表、邻接矩阵创建图
+## 创建一个没有边（edge）和节点（node）的空图
+G = nx.Graph()
+print(G)
+
