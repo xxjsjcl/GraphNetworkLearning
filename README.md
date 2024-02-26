@@ -65,4 +65,17 @@ NetworkX内置了一些预制好的图结构和图数据
 代码：Code_图机器学习基本使用\A3_创建图_连接表和邻接表创建图.py
 ```
 
-#### （3）创建节点和连接
+#### （3）创建节点
+
+使用NetworkX创建单个节点、多个节点
+
+在 NetworkX 中，节点可以是任何可哈希([hashable](https://link.zhihu.com/?target=https%3A//docs.python.org/3/glossary.html%23term-hashable))对象，例如，文本字符串、图像、XML对象、另一个图、自定义节点对象等。
+
+参考文献：
+
+* 创建图基础：[https://networkx.org/documentation/stable/tutorial.html](https://networkx.org/documentation/stable/tutorial.html)
+* 更改图、节点、边的属性：[https://networkx.org/documentation/stable/tutorial.html#attributes](https://networkx.org/documentation/stable/tutorial.html#attributes)
+
+```
+代码：Code_图机器学习基本使用\A4_创建节点.py
+```
