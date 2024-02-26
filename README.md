@@ -19,7 +19,9 @@
 
 （3）测试环境
 
+```
 代码：Code_图机器学习基本使用\A1_配置环境.py
+```
 
 ### 2. NetworkX基本使用方法
 
@@ -36,14 +38,31 @@ NetworkX内置了一些预制好的图结构和图数据
 * [https://networkx.org/documentation/latest/reference/generators.html](https://networkx.org/documentation/latest/reference/generators.html)
 * [https://networkx.org/documentation/latest/auto_examples/graph/index.html](https://networkx.org/documentation/latest/auto_examples/graph/index.html)
 
+```
 代码：Code_图机器学习基本使用\A2_创建图NetworkX内置图.py
+```
 
 #### （2）创建图，使用连接表和邻接表创建图
 
-使用NetworkX，通过连接表和邻接表创建图，通过邻接矩阵创建图
+使用NetworkX，通过连接表和邻接表创建图，保存一个图的邻接表，通过邻接矩阵创建图
 
 参考文献：
 
-* [https://networkx.org/documentation/latest/reference/convert.html](https://networkx.org/documentation/latest/reference/convert.html)
+* 格式转换：[https://networkx.org/documentation/latest/reference/convert.html](https://networkx.org/documentation/latest/reference/convert.html)
+* 读写图：[https://networkx.org/documentation/latest/reference/readwrite/index.html](https://networkx.org/documentation/latest/reference/readwrite/index.html)
 
+数据来源：
+
+* 中国四大名著人物关系知识图谱：[http://www.openkg.cn/dataset/ch4masterpieces](http://www.openkg.cn/dataset/ch4masterpieces)
+
+连接表：可以理解成记录了每一条边的表格，表格一般3列，第一列是头节点，第二列是尾节点，第三列是连接的名字或属性
+
+邻接表：可以理解成记录每个节点与其他节点关系的表格，表格第一列是每个节点，每个节点后面的列分别记录与其有连接的其他节点，有向图的话第一列都作为头节点
+
+邻接矩阵：以n*n的矩阵记录邻接关系，n为节点数，如果第m个节点和第n个节点有连接关系，则临界矩阵的第m行n列的数值不为0
+
+```
 代码：Code_图机器学习基本使用\A3_创建图_连接表和邻接表创建图.py
+```
+
+#### （3）创建节点和连接
