@@ -34,8 +34,10 @@ G.add_edges_from(edges_total)
 print('----------查看图的属性----------')
 print(G,end='\n\n') # 全图属性
 print(G.nodes,end='\n\n') # 所有节点
+print(G.nodes(data=True),end='\n\n') # 返回带属性的节点
 print(len(G),end='\n\n') # 节点数
 print(G.edges,end='\n\n') # 所有连接
+print(len(G.edges),end='\n\n') # 连接数
 print(G.size(),end='\n\n') # 连接数，或所有连接的权重和
 print(G.edges('关羽'),end='\n\n')  # 提取与节点'关羽'相连的边
 

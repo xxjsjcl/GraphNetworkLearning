@@ -18,6 +18,24 @@ G.add_node('刘备')
 print(G.nodes)
 G.add_node(2)  # 节点可以是任意可哈希对象
 print(G.nodes)
+print('----------添加节点的属性----------')
+G.add_node('赵云',武器='青钢剑',武力=95,智力=80)
+print(G.nodes)
+
+# 访问节点的属性
+print('----------编辑节点的属性----------')
+G.add_node('赵云',武器='青钢剑',武力=95,智力=80)
+print(G.nodes['赵云'])
+print(G.nodes['赵云']['武器'])
+
+# 编辑节点的属性
+print('----------编辑节点的属性----------')
+G.nodes['刘备']['武器']='雌雄双股剑'
+print(G.nodes['刘备'])
+print('----------删除节点的属性----------')
+del G.nodes['刘备']['武器']
+print(G.nodes['刘备'])
+
 
 # 添加多个节点
 print('----------添加多个节点----------')
@@ -32,6 +50,9 @@ G.add_nodes_from([('关羽',{'武器':'青龙偃月刀','武力':90,'智力':90}
                   ('张飞',{'武器':'丈八蛇矛','武力':85,'智力':80}),
                   ('吕布',{'武器':'方天画戟','武力':100,'智力':70})])
 print(G.nodes)
+print('----------查看节点的属性----------')
+print(G.nodes(data=True))
+print(G.nodes(data='武器'))
 plt.figure()
 nx.draw(G, with_labels=True, node_color='pink')
 
