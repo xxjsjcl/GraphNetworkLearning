@@ -117,6 +117,7 @@ NetworkX创建连接的方式和节点相似，可以参考节点的相关部分
 
 * draw函数中的参数：[https://networkx.org/documentation/stable/reference/generated/networkx.drawing.nx_pylab.draw.html](https://networkx.org/documentation/stable/reference/generated/networkx.drawing.nx_pylab.draw.html)
 * 更多的设置参数：[https://networkx.org/documentation/stable/reference/generated/networkx.drawing.nx_pylab.draw_networkx.html#](https://networkx.org/documentation/stable/reference/generated/networkx.drawing.nx_pylab.draw_networkx.html#)
+* 一些例子：[https://networkx.org/documentation/stable/auto_examples/drawing/index.html](https://networkx.org/documentation/stable/auto_examples/drawing/index.html)
 * 常用的颜色：[xkcd.com/color/rgb/](https://xkcd.com/color/rgb/)
 
 xkcd调色盘：见上链接，可以在matplotlib中直接使用的900多种常用色，使用方法如下
@@ -126,3 +127,14 @@ color='xkcd:red'
 ```
 
 ![1709017623781](image/README/1709017623781.png)
+
+```
+代码：Code_图机器学习基本使用\B1_NetworX图可视化.py
+      Code_常用代码\T100_NetworkX画图模板.py
+```
+
+#### （2）图可视化例子，美国128城市交通关系无向图
+
+参考文献：
+
+* 数据源文件：[https://networkx.org/documentation/stable/auto_examples/drawing/plot_knuth_miles.html](https://networkx.org/documentation/stable/auto_examples/drawing/plot_knuth_miles.html)
