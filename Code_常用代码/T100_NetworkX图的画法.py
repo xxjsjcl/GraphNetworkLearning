@@ -8,6 +8,8 @@ import matplotlib.pyplot as plt
 ## 配置windows 显示中文
 plt.rcParams['font.sans-serif']=['SimHei'] # 用来显示中文标签
 plt.rcParams['axes.unicode_minus']=False  # 用来正常显示正负号
+## 开启交互模式，show()画图不会阻塞程序运行，但会马上消失
+plt.ion()
 
 # 经典图结构
 fig = plt.figure("Network绘图演示", figsize=(16, 8), constrained_layout=True)
@@ -61,4 +63,6 @@ ax6 = fig.add_subplot(axgrid[1, 6:8])
 ax6.set_title("二项树")
 nx.draw(G)
 
+# 可以在程序最后关闭交互模式，一起再显示出来
+plt.ioff()
 plt.show()

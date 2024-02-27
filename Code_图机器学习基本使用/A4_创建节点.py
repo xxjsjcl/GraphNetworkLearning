@@ -32,6 +32,25 @@ G.add_nodes_from([('关羽',{'武器':'青龙偃月刀','武力':90,'智力':90}
                   ('张飞',{'武器':'丈八蛇矛','武力':85,'智力':80}),
                   ('吕布',{'武器':'方天画戟','武力':100,'智力':70})])
 print(G.nodes)
-
+plt.figure()
 nx.draw(G, with_labels=True, node_color='pink')
+
+
+# 添加其他图的节点
+## 生成一个新图
+G2 = nx.Graph(nx.house_graph(create_using=nx.Graph))
+print(G2.nodes)
+plt.figure()
+nx.draw(G2)
+
+## 把新图的节点添加给原图
+G.add_nodes_from(G2)
+print(G.nodes)
+plt.figure()
+
+## 把新图作为一个节点添加给原图
+G.add_node(G2)
+print(G.nodes)
+nx.draw(G, with_labels=True, node_color='pink')
+
 plt.show()
