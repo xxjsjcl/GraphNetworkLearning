@@ -12,13 +12,10 @@ plt.rcParams['axes.unicode_minus']=False  # 用来正常显示正负号
 
 # 将美国128城市交通文件导入成NetworkX图
 # 源文件，需要解压成txt：https://github.com/networkx/networkx/blob/main/examples/drawing/knuth_miles.txt.gz
-def Miles_to_Graph(filePath:str=None):
+def Miles_to_Graph(filePath:str=r'Data\案例\knuth_miles.txt'):
     """
     将txt文件转换为nx图
     """
-    if filePath is None:
-        filePath = r'Data\案例\knuth_miles.txt'
-    
     with open(filePath, 'r') as file:
         G = nx.Graph()          # 新建一个空的无向图
         G.position = {}         # 增加position字典

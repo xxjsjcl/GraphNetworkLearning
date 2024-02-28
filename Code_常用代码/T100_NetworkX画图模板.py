@@ -218,11 +218,7 @@ draw_edges = nx.draw_networkx_edges(
     edge_cmap=edge_cmap,
     width=2,
 )
-## 单独设定节点
-# numOfNode = G.number_of_nodes()
-# node_alphas = [0.3, 0.4, 0.5, 0.6, 0.7]
-# for i in range(numOfNode):
-#     draw_nodes[i].set_alpha(node_alphas[i])
+
 ## 单独设定边的透明度
 numOfEdge = G.number_of_edges()
 edge_alphas = [0.3, 0.4, 0.5, 0.6, 0.7, 0.8]

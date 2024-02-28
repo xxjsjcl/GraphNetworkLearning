@@ -23,8 +23,8 @@ python：[https://www.python.org/](https://www.python.org/)
 
 #### （3）测试环境
 
-```
-代码：Code_图机器学习基本使用\A1_配置环境.py
+```python
+# 代码：Code_图机器学习基本使用\A1_配置环境.py
 ```
 
 ### 2. NetworkX基本使用方法
@@ -45,8 +45,8 @@ NetworkX内置了一些预制好的图结构和图数据。
 * NetworkX内置的图：[https://networkx.org/documentation/latest/reference/generators.html](https://networkx.org/documentation/latest/reference/generators.html)
 * 一些例子：[https://networkx.org/documentation/latest/auto_examples/graph/index.html](https://networkx.org/documentation/latest/auto_examples/graph/index.html)
 
-```
-代码：Code_图机器学习基本使用\A2_创建图NetworkX内置图.py
+```python
+# 代码：Code_图机器学习基本使用\A2_创建图NetworkX内置图.py
 ```
 
 #### （2）创建图，使用连接表和邻接表创建图
@@ -68,8 +68,8 @@ NetworkX内置了一些预制好的图结构和图数据。
 
 邻接矩阵：以n*n的矩阵记录邻接关系，n为节点数，如果第m个节点和第n个节点有连接关系，则临界矩阵的第m行n列的数值不为0。
 
-```
-代码：Code_图机器学习基本使用\A3_创建图_连接表和邻接表创建图.py
+```python
+# 代码：Code_图机器学习基本使用\A3_创建图_连接表和邻接表创建图.py
 ```
 
 #### （3）创建节点
@@ -85,14 +85,13 @@ NetworkX内置了一些预制好的图结构和图数据。
 * 创建图基础：[https://networkx.org/documentation/stable/tutorial.html](https://networkx.org/documentation/stable/tutorial.html)
 * 更改图、节点、边的属性：[https://networkx.org/documentation/stable/tutorial.html#attributes](https://networkx.org/documentation/stable/tutorial.html#attributes)
 
-```
-代码：Code_图机器学习基本使用\A4_创建节点.py
+```python
+# 代码：Code_图机器学习基本使用\A4_创建节点.py
 ```
 
 #### （4）创建连接
 
 使用NetworkX创建连接，添加并访问连接的属性，本文中"连接"和"边"会混用，代表一个意思。
-
 
 NetworkX可以创建无向图（Graph），有向图（Directed Graph），带权重的图（Weighted Graph）和多路图（MultiGraph）。
 
@@ -102,10 +101,9 @@ NetworkX可以创建无向图（Graph），有向图（Directed Graph），带�
 
 NetworkX创建连接的方式和节点相似，可以参考节点的相关部分。
 
+```python
+# 代码：Code_图机器学习基本使用\A5_创建连接.py
 ```
-代码：Code_图机器学习基本使用\A5_创建连接.py
-```
-
 
 ### 3. NetworkX图的可视化方法
 
@@ -128,9 +126,9 @@ color='xkcd:red'
 
 ![1709017623781](image/README/1709017623781.png)
 
-```
-代码：Code_图机器学习基本使用\B1_NetworX图可视化.py
-      Code_常用代码\T100_NetworkX画图模板.py
+```python
+# 代码：Code_图机器学习基本使用\B1_NetworX图可视化.py
+#       Code_常用代码\T100_NetworkX画图模板.py
 ```
 
 #### （2）图可视化例子，美国128城市交通关系无向图
@@ -139,8 +137,8 @@ color='xkcd:red'
 
 * 数据源文件：[https://networkx.org/documentation/stable/auto_examples/drawing/plot_knuth_miles.html](https://networkx.org/documentation/stable/auto_examples/drawing/plot_knuth_miles.html)
 
-```
-代码：Code_图机器学习基本使用\B2_例子_美国128城市交通连接图.py
+```python
+# 代码：Code_图机器学习基本使用\B2_例子_美国128城市交通连接图.py
 ```
 
 #### （3）有向图可视化
@@ -149,12 +147,27 @@ color='xkcd:red'
 
 * 可视化例子：[https://networkx.org/documentation/latest/auto_examples/drawing/plot_directed.html#sphx-glr-auto-examples-drawing-plot-directed-py](https://networkx.org/documentation/latest/auto_examples/drawing/plot_directed.html#sphx-glr-auto-examples-drawing-plot-directed-py)
 
-```
-代码：Code_图机器学习基本使用\B3_有向图可视化.py
+```python
+# 代码：Code_图机器学习基本使用\B3_有向图可视化.py
 ```
 
 #### （4）多路图(MultiDiGraph)可视化例子，国际象棋对局
 
+对多路图可视化的例子，数据1886-1985年国际象棋冠军赛对局，节点大小表示胜利次数，边的宽度表示对局次数
+
 参考文献
 
-* 参考
+* 可视化例子：[https://networkx.org/documentation/latest/auto_examples/drawing/plot_chess_masters.html#sphx-glr-auto-examples-drawing-plot-chess-masters-py](https://networkx.org/documentation/latest/auto_examples/drawing/plot_chess_masters.html#sphx-glr-auto-examples-drawing-plot-chess-masters-py)
+* 数据源：[https://chessproblem.my-free-games.com/PGN/WCC.zip](https://chessproblem.my-free-games.com/PGN/WCC.zip)
+
+```python
+# 代码：Code_图机器学习基本使用\B4_例子_国际象棋对局.py
+
+# 注意：这个代码有一个坑，在使用matplotlib新建figure的时候，不能先于networkx的kamada_kawai_layout执行，否则会报错，原因不明。
+# 这样执行会报错
+fig,ax = plt.subplots(figsize=(12, 12))
+pos = nx.kamada_kawai_layout(G)
+# 这样执行可以正常运行
+pos = nx.kamada_kawai_layout(G)
+fig,ax = plt.subplots(figsize=(12, 12))
+```
