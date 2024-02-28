@@ -138,3 +138,23 @@ color='xkcd:red'
 参考文献：
 
 * 数据源文件：[https://networkx.org/documentation/stable/auto_examples/drawing/plot_knuth_miles.html](https://networkx.org/documentation/stable/auto_examples/drawing/plot_knuth_miles.html)
+
+```
+代码：Code_图机器学习基本使用\B2_例子_美国128城市交通连接图.py
+```
+
+#### （3）有向图可视化
+
+参考文献：
+
+* 可视化例子：[https://networkx.org/documentation/latest/auto_examples/drawing/plot_directed.html#sphx-glr-auto-examples-drawing-plot-directed-py](https://networkx.org/documentation/latest/auto_examples/drawing/plot_directed.html#sphx-glr-auto-examples-drawing-plot-directed-py)
+
+```
+代码：Code_图机器学习基本使用\B3_有向图可视化.py
+```
+
+#### （4）多路图(MultiDiGraph)可视化例子，国际象棋对局
+
+参考文献
+
+* 参考
