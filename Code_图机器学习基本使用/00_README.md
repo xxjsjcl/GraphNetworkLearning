@@ -155,7 +155,7 @@ color='xkcd:red'
 
 对多路图可视化的例子，数据1886-1985年国际象棋冠军赛对局，节点大小表示胜利次数，边的宽度表示对局次数
 
-参考文献
+参考文献：
 
 * 可视化例子：[https://networkx.org/documentation/latest/auto_examples/drawing/plot_chess_masters.html#sphx-glr-auto-examples-drawing-plot-chess-masters-py](https://networkx.org/documentation/latest/auto_examples/drawing/plot_chess_masters.html#sphx-glr-auto-examples-drawing-plot-chess-masters-py)
 * 数据源：[https://chessproblem.my-free-games.com/PGN/WCC.zip](https://chessproblem.my-free-games.com/PGN/WCC.zip)
@@ -183,4 +183,18 @@ fig,ax = plt.subplots(figsize=(12, 12))
 
 ```python
 # 代码：Code_图机器学习基本使用\B5_自定义节点图标.py
+```
+
+#### （6）自我中心图（Ego图）
+
+在NetworkX中创建Ego图，并找出连接数最大的主节点，构建以主节点为中心的邻域子图。
+
+Ego图：存在一个中心节点，和所有的其他节点都有连接。
+
+参考文献：
+
+* Ego图例子：[https://networkx.org/documentation/stable/auto_examples/drawing/plot_ego_graph.html#sphx-glr-auto-examples-drawing-plot-ego-graph-py](https://networkx.org/documentation/stable/auto_examples/drawing/plot_ego_graph.html#sphx-glr-auto-examples-drawing-plot-ego-graph-py)
+
+```python
+# 代码：Code_图机器学习基本使用\B6_自我中心图.py
 ```
