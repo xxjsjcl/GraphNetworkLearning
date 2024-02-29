@@ -1,5 +1,6 @@
 import operator as op
 
+## 对非数值对象排序
 a=[('john', 'A', 15), ('pan', 'B', 5), ('dave', 'C', 10),('john', 'B', 10)]
 print('----------原列表----------')
 print(a)
@@ -11,4 +12,6 @@ print('----------按照a中元素的下标0，2排序，先排0，后排2-------
 print(sorted(a, key=op.itemgetter(0,2))) 
 print('----------按照a中元素的下标0，1排序，先排0，后排2，倒序----------')
 print(sorted(a, key=op.itemgetter(0,2), reverse=True)) 
+
+##
 

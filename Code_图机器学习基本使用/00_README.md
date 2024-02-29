@@ -31,7 +31,10 @@ python：[https://www.python.org/](https://www.python.org/)
 
 NetworkX基本使用方法。
 
-参考文献：[https://networkx.org/documentation/stable/auto_examples/index.html](https://networkx.org/documentation/stable/auto_examples/index.html)
+参考文献：
+
+* 基本教程：[https://networkx.org/documentation/stable/tutorial.html#](https://networkx.org/documentation/stable/tutorial.html#)
+* 例子：[https://networkx.org/documentation/stable/auto_examples/index.html](https://networkx.org/documentation/stable/auto_examples/index.html)
 
 #### （1）创建图，NetworkX内置图
 
@@ -197,4 +200,70 @@ Ego图：存在一个中心节点，和所有的其他节点都有连接。
 
 ```python
 # 代码：Code_图机器学习基本使用\B6_自我中心图.py
+G_ego = nx.ego_graph(G, largest_hub)
 ```
+
+### 4. NetworkX计算图的特征
+
+使用NetworkX计算图的特征
+
+参考文献：
+
+* NetworkX算法：[https://networkx.org/documentation/stable/reference/algorithms/index.html](https://networkx.org/documentation/stable/reference/algorithms/index.html)
+
+#### （1）PageRank节点重要度
+
+计算有向图节点的PageRank节点重要度。
+
+PageRank算法最初是用来评估网页重要性的，其核心思路就是在有向图上根据其边的分布和权重进行随机游走，每个时刻都可以计算出走到每个节点的概率，随着时间的延长，走到每个节点的概率趋于平稳，平稳状态下（时间区域无穷大）走到每个节点的概率即为节点的PageRank。
+
+参考文献：
+
+* PageRank算法：[https://networkx.org/documentation/stable/reference/algorithms/link_analysis.html](https://networkx.org/documentation/stable/reference/algorithms/link_analysis.html)
+* PageRank定义：[PageRank算法详解 - 知乎 (zhihu.com)](https://zhuanlan.zhihu.com/p/137561088#%E6%9C%89%E5%90%91%E5%9B%BE%E5%92%8C%E9%9A%8F%E6%9C%BA%E6%B8%B8%E8%B5%B0%E6%A8%A1%E5%9E%8B)
+
+```python
+# 代码：Code_图机器学习基本使用\C1_PageRank节点重要度.py
+pageRank=nx.pagerank(H)
+```
+
+#### （2）节点连接数分析
+
+节点连接数即是节点的度，本文中会混用，节点的度是与该节点连接的所有边的数量。有向图中，根据边的方向，还可以统计从节点出发的边的数量（出度）和进入节点的边的数量（入度）。
+
+参考文献：
+
+* 节点度分析：[https://networkx.org/documentation/stable/auto_examples/drawing/plot_degree.html#sphx-glr-auto-examples-drawing-plot-degree-py](https://networkx.org/documentation/stable/auto_examples/drawing/plot_degree.html#sphx-glr-auto-examples-drawing-plot-degree-py)
+
+```python
+# 代码：Code_图机器学习基本使用\C2_节点度分析.py
+degree = G.degree()		# G可以是有向图或无向图
+out_degree = H.out_degree()	# H是一个有向图
+in_degree = H.in_degree()
+```
+
+#### （3）图特征分析
+
+用NetworkX分析图的基本特征。
+
+这个例子里面分析了图的半径、直径、离心率、中心节点和外围节点等基本特征，每个特征的具体涵义可以参考图论相关内容。
+
+参考文献：
+
+* 图特征例子：[https://networkx.org/documentation/stable/auto_examples/basic/plot_properties.html#sphx-glr-auto-examples-basic-plot-properties-py](https://networkx.org/documentation/stable/auto_examples/basic/plot_properties.html#sphx-glr-auto-examples-basic-plot-properties-py)
+* 图的基本属性：[https://zhuanlan.zhihu.com/p/261156808](https://zhuanlan.zhihu.com/p/261156808)
+
+```python
+# 代码：Code_图机器学习基本使用\C3_图特征分析.py
+# 注意：官方例子中计算平均最短路径距离的代码有误，结果不对，直接调用networkx计算平均最短路径的函数结果是正确的
+nx.average_shortest_path_length(G)  # 函数计算出的结果是正确的
+print(f"average shortest path length {sum(pathlengths) / len(pathlengths)}")	# 这句计算过程是不符合平均最短路径距离的定义的
+```
+
+
+
+
+
+
+
+end
