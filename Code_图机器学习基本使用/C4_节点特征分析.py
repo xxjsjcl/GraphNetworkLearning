@@ -153,8 +153,9 @@ def Node_CommonNeighbor_JaccardCoefficient(G,DiG):
 
 ## Katz Index卡兹系数
 def Node_Katz_Index(G:nx.Graph):
-    ## Katz系数衡量节点u和节点v之间路径长度为k的路径数量
-    ## 可以用邻接矩阵的k次方计算
+    ## Katz系数衡量2个节点间的相似度
+    ## Katz系数计算2节点之间路径长度为k的路径数量的加权和，路径长度越大（k越大）权重越小
+    ## 可以用邻接矩阵的k次方计算2节点间长度为k的路径数量
     ## Katz系数计算过程,这个计算过程可信度存疑
     ### 计算主特征向量
     print("----------计算Katz系数----------")
