@@ -268,12 +268,39 @@ print(f"average shortest path length {sum(pathlengths) / len(pathlengths)}")	# �
 
 例子中计算了无向图和有向图的节点的度，度中心性Degree Centrality，特征向量中心性Eigenvector Centrality，中介中心性Between Centrality，紧密中心性Closeness Centrality等。
 
-还演示了PageRank，Katz中心性，HITS算法，聚集系数，
+还演示了PageRank，Katz中心性，HITS算法，聚集系数，桥Bridges，2个节点的公共邻居Common Neighbors，2节点邻居的交并比Jaccard Efficient和katz系数等。
 
 参考文献：
 
+* 中心度的算法：[https://networkx.org/documentation/stable/reference/algorithms/centrality.html](https://networkx.org/documentation/stable/reference/algorithms/centrality.html)
+* HITS算法：[https://zhuanlan.zhihu.com/p/206965478](https://zhuanlan.zhihu.com/p/206965478)
+* NetworX聚类算法：[https://networkx.org/documentation/stable/reference/algorithms/clustering.html](https://networkx.org/documentation/stable/reference/algorithms/clustering.html)
+* Bridge算法：[https://networkx.org/documentation/stable/reference/algorithms/bridges.html](https://networkx.org/documentation/stable/reference/algorithms/bridges.html)
 * 图的一些基本概念：[https://zhuanlan.zhihu.com/p/380945503](https://zhuanlan.zhihu.com/p/380945503)
 * 节点特征的概念：[https://zhuanlan.zhihu.com/p/403076024](https://zhuanlan.zhihu.com/p/403076024) , [https://blog.csdn.net/lucienn/article/details/115418203](https://blog.csdn.net/lucienn/article/details/115418203) , [https://www.bilibili.com/video/BV1HK411175s/?spm_id_from=333.999.0.0&amp;vd_source=23da92f974a42dedec9c261159a41030](https://www.bilibili.com/video/BV1HK411175s/?spm_id_from=333.999.0.0&vd_source=23da92f974a42dedec9c261159a41030)
-* HITS算法：[https://zhuanlan.zhihu.com/p/206965478](https://zhuanlan.zhihu.com/p/206965478)
+
+```python
+# 代码：Code_图机器学习基本使用\C4_节点特征分析.py
+# 注意：计算Katz Index的函数可信度存疑
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 end

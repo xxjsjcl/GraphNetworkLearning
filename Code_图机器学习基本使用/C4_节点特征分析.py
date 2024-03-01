@@ -122,7 +122,52 @@ def Node_PageRank(G,DiG):
     print(f"有向图的HITS_Hubs质量：\n{H}")
     print(f"有向图的HITS_Authorities质量：\n{A}")
     My_Draw(DiG, pos=pos, measures=dict(H), measure_name="DiGraph HITS Hubs") 
-    My_Draw(DiG, pos=pos, measures=dict(A), measure_name="DiGraph HITS Authorities") 
+    My_Draw(DiG, pos=pos, measures=dict(A), measure_name="DiGraph HITS Authorities")
+
+## Clustering算法
+def Node_Clustering(G,DiG):
+    ## 聚类算法主要描述了节点的社群属性，包括数节点能够形成的三角形个数，聚集系数等等
+    ### 数节点的三角形
+    print(f"无向图节点三角形个数：\n{nx.triangles(G)}")
+    My_Draw(G, pos=pos, measures=dict(nx.triangles(G)), measure_name="Graph Node triangles") 
+    ### 节点的聚集系数clustering coefficient
+    print(f"无向图节点聚集系数：\n{nx.clustering(G)}")
+    My_Draw(G, pos=pos, measures=dict(nx.clustering(G)), measure_name="Graph Node clustering coefficient") 
+
+## 桥Bridge
+def Edge_Bridge(G,DiG):
+    ## 桥的定义是：如果某个边从图中删掉，引起图的连通域会增加，则该边是桥（Bridge）
+    ## 简单说就是删除桥会使图被拆成2个小图
+    bridges = list(nx.bridges(G))
+    print(f"无向图的桥：\n{bridges}")
+
+## 公共邻居和交并比
+def Node_CommonNeighbor_JaccardCoefficient(G,DiG):
+    ## CommonNeighbor衡量和2个节点共同相邻的节点数量
+    ## JaccardCoefficient衡量2个节点邻居的交并比
+    ## 这2个系数都可以用来衡量2个节点的相似度
+    print(f"0节点和4节点的公共邻居：\n{list(nx.common_neighbors(G, 0, 4))}")
+
+    print(f"0，4节点对的交并比：\n{list(nx.jaccard_coefficient(G,[(0,4)]))}")
+    print(f"多个节点对的交并比：\n{list(nx.jaccard_coefficient(G,[(0,4),(2,5),(3,7)]))}")
+
+## Katz Index卡兹系数
+def Node_Katz_Index(G:nx.Graph):
+    ## Katz系数衡量节点u和节点v之间路径长度为k的路径数量
+    ## 可以用邻接矩阵的k次方计算
+    ## Katz系数计算过程,这个计算过程可信度存疑
+    ### 计算主特征向量
+    print("----------计算Katz系数----------")
+    L = nx.normalized_laplacian_matrix(G)   # 图的拉普拉斯矩阵，=邻接矩阵-加权度矩阵
+    np.set_printoptions(precision=3, suppress=True)
+    e = np.linalg.eigvals(L.A)          # 计算矩阵特征值
+    print(f"最大特征值：{max(e)}")
+    beta = 1/max(e)                     # 折减系数
+    I = np.identity(len(G.nodes))       # 创建单位矩阵
+    S = np.linalg.inv(I - nx.to_numpy_array(G)*beta)-I        # 计算katz系数
+    print(f"Katz系数：\n{S}")
+    
+    
 
 
 if __name__ == "__main__":
@@ -133,23 +178,34 @@ if __name__ == "__main__":
     DiG = nx.DiGraph()
     DiG.add_edges_from([(2,3), (3,2), (4,1), (4,2), (5,2), (5,4), (5,6), (6,2), (6,5),
                         (7,2), (7,5), (8,2), (8,5), (9,2), (9,5), (10,5), (11,5)])
-    # ## 节点的邻居
-    # Node_Neighbor(G,DiG)
-    # ## 节点的度
-    # Node_Degree(G,DiG)
-    # ## 度中心性（Degree Centrality）
-    # Node_Degree_Centrality(G,DiG)
-    # ## 特征向量中心性（Eigenvector Centrality）
-    # Node_Eigenvector_Centrality(G,DiG)
-    # ## 中介中心性（Betweenness Centrality）
-    # Node_Betweenness_Centrality(G,DiG)
-    # ## 紧密中心性（Closeness Centrality）
-    # Node_Closeness_Centrality(G,DiG)
-    # ## Katz中心性
-    # Node_Katz_Centrality(G,DiG)
-    # ## PageRank
-    # Node_PageRank(G,DiG)
-    # ## HITS算法，Hubs和Authorities
-    # Node_PageRank(G,DiG)
+    ## 节点的邻居
+    Node_Neighbor(G,DiG)
+    ## 节点的度
+    Node_Degree(G,DiG)
+    ## 度中心性（Degree Centrality）
+    Node_Degree_Centrality(G,DiG)
+    ## 特征向量中心性（Eigenvector Centrality）
+    Node_Eigenvector_Centrality(G,DiG)
+    ## 中介中心性（Betweenness Centrality）
+    Node_Betweenness_Centrality(G,DiG)
+    ## 紧密中心性（Closeness Centrality）
+    Node_Closeness_Centrality(G,DiG)
+    ## Katz中心性
+    Node_Katz_Centrality(G,DiG)
+    ## PageRank
+    Node_PageRank(G,DiG)
+    ## HITS算法，Hubs和Authorities
+    Node_PageRank(G,DiG)
+    ## Clustering算法
+    Node_Clustering(G,DiG)
+    ## 桥Bridge，衡量边的重要性
+    Edge_Bridge(G,DiG)
+    ## 公共邻居和交并比，衡量2个节点的相似度
+    Node_CommonNeighbor_JaccardCoefficient(G,DiG)
+    ## Katz Index卡兹系数
+    Node_Katz_Index(G)
+
+
+
 
     plt.show()
