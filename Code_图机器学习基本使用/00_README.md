@@ -127,7 +127,7 @@ xkcd调色盘：见上链接，可以在matplotlib中直接使用的900多种常
 color='xkcd:red'
 ```
 
-![1709017623781](image/README/1709017623781.png)
+![xkcd](image\README\1709017623781.png)
 
 ```python
 # 代码：Code_图机器学习基本使用\B1_NetworX图可视化.py
@@ -246,7 +246,9 @@ in_degree = H.in_degree()
 
 用NetworkX分析图的基本特征。
 
-这个例子里面分析了图的半径、直径、离心率、中心节点和外围节点等基本特征，每个特征的具体涵义可以参考图论相关内容。
+这个例子里面分析了图的半径、直径、离心率、中心节点和外围节点等基本特征，还计算了节点间的最短路径和图的平均最短路径长度。
+
+每个特征的具体涵义可以参考图论相关内容。
 
 参考文献：
 
@@ -260,10 +262,18 @@ nx.average_shortest_path_length(G)  # 函数计算出的结果是正确的
 print(f"average shortest path length {sum(pathlengths) / len(pathlengths)}")	# 这句计算过程是不符合平均最短路径距离的定义的
 ```
 
+#### （4）节点特征分析
 
+用NetworkX计算有向图和无向图的节点特征。
 
+例子中计算了无向图和有向图的节点的度，度中心性Degree Centrality，特征向量中心性Eigenvector Centrality，中介中心性Between Centrality，紧密中心性Closeness Centrality等。
 
+还演示了PageRank，Katz中心性，HITS算法，聚集系数，
 
+参考文献：
 
+* 图的一些基本概念：[https://zhuanlan.zhihu.com/p/380945503](https://zhuanlan.zhihu.com/p/380945503)
+* 节点特征的概念：[https://zhuanlan.zhihu.com/p/403076024](https://zhuanlan.zhihu.com/p/403076024) , [https://blog.csdn.net/lucienn/article/details/115418203](https://blog.csdn.net/lucienn/article/details/115418203) , [https://www.bilibili.com/video/BV1HK411175s/?spm_id_from=333.999.0.0&amp;vd_source=23da92f974a42dedec9c261159a41030](https://www.bilibili.com/video/BV1HK411175s/?spm_id_from=333.999.0.0&vd_source=23da92f974a42dedec9c261159a41030)
+* HITS算法：[https://zhuanlan.zhihu.com/p/206965478](https://zhuanlan.zhihu.com/p/206965478)
 
 end
