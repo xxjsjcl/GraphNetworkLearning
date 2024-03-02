@@ -127,7 +127,7 @@ xkcd调色盘：见上链接，可以在matplotlib中直接使用的900多种常
 color='xkcd:red'
 ```
 
-![xkcd](image\README\1709017623781.png)
+![xkcd](..\image\README\1709017623781.png)
 
 ```python
 # 代码：Code_图机器学习基本使用\B1_NetworX图可视化.py
@@ -283,24 +283,5 @@ print(f"average shortest path length {sum(pathlengths) / len(pathlengths)}")	# �
 # 代码：Code_图机器学习基本使用\C4_节点特征分析.py
 # 注意：计算Katz Index的函数可信度存疑
 ```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 end
