@@ -291,17 +291,22 @@ print(f"average shortest path length {sum(pathlengths) / len(pathlengths)}")	# �
 参考文献：
 
 * 上海地铁数据：[https://service.shmetro.com/hcskb/index.htm](https://service.shmetro.com/hcskb/index.htm)
+* 最短路径：[https://networkx.org/documentation/stable/reference/algorithms/shortest_paths.html](https://networkx.org/documentation/stable/reference/algorithms/shortest_paths.html)
 
 ```python
 # 代码：Code_图机器学习基本使用\C5_例子_地铁站图数据挖掘.py
 ```
 
+#### （6）计算全图的Graphlet个数
 
+计算图中的子图（Graphlet）个数
 
+参考文献：
 
+* networkX两个图的同构：[https://networkx.org/documentation/stable/reference/algorithms/isomorphism.html](https://networkx.org/documentation/stable/reference/algorithms/isomorphism.html)
 
-
-
-
+```python
+# 代码：Code_图机器学习基本使用\C6_计算全图的Graphlet个数.py
+```
 
 end
