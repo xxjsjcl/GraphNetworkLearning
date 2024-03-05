@@ -309,4 +309,27 @@ print(f"average shortest path length {sum(pathlengths) / len(pathlengths)}")	# �
 # 代码：Code_图机器学习基本使用\C6_计算全图的Graphlet个数.py
 ```
 
+#### （7）拉普拉斯矩阵特征值分解
+
+计算图的邻接矩阵，拉普拉斯矩阵，特征值分解
+
+参考文献：
+
+* 拉普拉斯矩阵定义：[https://blog.csdn.net/qq280929090/article/details/103591577](https://blog.csdn.net/qq280929090/article/details/103591577)
+* 一些对拉普拉斯矩阵的理解，都不太直观，仅参考：[https://zhuanlan.zhihu.com/p/67336297](https://zhuanlan.zhihu.com/p/67336297), [https://zhuanlan.zhihu.com/p/362416124](https://zhuanlan.zhihu.com/p/362416124)
+* NetworkX计算特征值例子：[https://networkx.org/documentation/stable/auto_examples/drawing/plot_eigenvalues.html#sphx-glr-auto-examples-drawing-plot-eigenvalues-py](https://networkx.org/documentation/stable/auto_examples/drawing/plot_eigenvalues.html#sphx-glr-auto-examples-drawing-plot-eigenvalues-py)
+* NetworkX线性代数函数：[https://networkx.org/documentation/stable/reference/linalg.html](https://networkx.org/documentation/stable/reference/linalg.html)
+
+
+
+```python
+# 代码：Code_图机器学习基本使用\C7_拉普拉斯矩阵特征值分解.py
+```
+
+
+
+
+
+
+
 end
